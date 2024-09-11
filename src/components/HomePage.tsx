@@ -1,7 +1,6 @@
 import { Button } from "@mui/material";
 import { useState } from "react";
 import { RingLoader } from "react-spinners";
-import InvestOptions from "./InvestOptions";
 import SipPlanner from "./SipPlanner";
 
 const HomePage = () => {
