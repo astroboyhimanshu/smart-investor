@@ -1,33 +1,23 @@
 import { useState } from "react";
 import { Typography, Slider, Button } from "@mui/material";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
+import SIPReturnCalculator from "./SIPReturnCalculator";
+import LumpsumReturnCalculator from "./LumpsumReturnCalculator";
+import { Square } from "@mui/icons-material";
 
-// Helper function to calculate SIP
-const returnCalculator = (
-  monthlyInvestment: number,
-  rateOfReturn: number,
-  years: number
-) => {
-  const months = years * 12;
-  const monthlyRate = rateOfReturn / 12 / 100;
-
-  const investmentAmount = monthlyInvestment * months;
-  const maturityValue =
-    monthlyInvestment *
-    ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) *
-    (1 + monthlyRate);
-  const estimatedReturns = maturityValue - investmentAmount;
-
-  return { investmentAmount, estimatedReturns, maturityValue };
-};
-
+// Helper function to calculate SIP or Lump Sum returns
 const SipPlanner = () => {
   const [monthlyInvestment, setMonthlyInvestment] = useState<number>(100);
+  const [lumpSumAmount, setLumpSumAmount] = useState<number>(10000);
   const [rateOfReturn, setRateOfReturn] = useState<number>(10);
   const [years, setYears] = useState<number>(2);
+  const [calcType, setCalcType] = useState<"sip" | "lumpsum">("sip");
 
+  // Calculate based on the selected type (SIP or Lump Sum)
   const { investmentAmount, estimatedReturns, maturityValue } =
-    returnCalculator(monthlyInvestment, rateOfReturn, years);
+    calcType === "sip"
+      ? SIPReturnCalculator(monthlyInvestment, rateOfReturn, years)
+      : LumpsumReturnCalculator(lumpSumAmount, rateOfReturn, years);
 
   // Data for the Pie Chart
   const data = [
@@ -41,34 +31,68 @@ const SipPlanner = () => {
     <div className="flex flex-grow p-4 justify-center">
       <div className="max-w-4xl flex flex-row gap-4 bg-gray-100 rounded-xl shadow-md p-4">
         {/* Left Side: Inputs and Results */}
-
         <div className="w-1/2 p-4">
-          <div className="flex">
-            <div className="flex mb-4 font-semibold text-3xl text-center">
-              SIP Calculator
-            </div>
+          <div className="flex justify-between items-center mb-4">
+            <div className="font-semibold text-3xl">Returns Calculator</div>
           </div>
-          {/* Monthly Investment */}
-          <div className="pb-1 pt-4">
-            <Typography variant="subtitle1">Monthly Investment (₹)</Typography>
-          </div>
-          <div className="flex items-center mb-2 ">
-            <input
-              value={monthlyInvestment}
-              onChange={(e) => setMonthlyInvestment(Number(e.target.value))}
-              type="number"
-              min={100}
-              className="border rounded p-1 mr-2 w-20"
-            />
-            <Slider
-              value={monthlyInvestment}
-              onChange={(_e, value) => setMonthlyInvestment(value as number)}
-              min={100}
-              max={100000}
-              step={100}
-              className="flex-grow ml-2"
-            />
-          </div>
+
+          {/* Conditional Inputs based on Calculation Type */}
+          {calcType === "sip" ? (
+            <>
+              {/* Monthly Investment for SIP */}
+              <div className="pb-1 pt-4">
+                <Typography variant="subtitle1">
+                  Monthly Investment (₹)
+                </Typography>
+              </div>
+              <div className="flex items-center mb-2">
+                <input
+                  value={monthlyInvestment}
+                  onChange={(e) => setMonthlyInvestment(Number(e.target.value))}
+                  type="number"
+                  min={100}
+                  className="border rounded p-1 mr-2 w-20"
+                />
+                <Slider
+                  value={monthlyInvestment}
+                  onChange={(_e, value) =>
+                    setMonthlyInvestment(value as number)
+                  }
+                  min={100}
+                  max={100000}
+                  step={100}
+                  className="flex-grow ml-2"
+                />
+              </div>
+            </>
+          ) : (
+            <>
+              {/* LumpSum Investment for LumpSum */}
+              <div className="pb-1 pt-4">
+                <Typography variant="subtitle1">
+                  Lump Sum Investment (₹)
+                </Typography>
+              </div>
+              <div className="flex items-center mb-2">
+                <input
+                  value={lumpSumAmount}
+                  onChange={(e) => setLumpSumAmount(Number(e.target.value))}
+                  type="number"
+                  min={1000}
+                  className="border rounded p-1 mr-2 w-20"
+                />
+                <Slider
+                  value={lumpSumAmount}
+                  onChange={(_e, value) => setLumpSumAmount(value as number)}
+                  min={1000}
+                  max={10000000}
+                  step={1000}
+                  className="flex-grow ml-2"
+                />
+              </div>
+            </>
+          )}
+
           {/* Rate of Return */}
           <div className="pb-1">
             <Typography variant="subtitle1">
@@ -94,6 +118,7 @@ const SipPlanner = () => {
               className="flex-grow ml-2"
             />
           </div>
+
           {/* Years */}
           <div className="pb-1">
             <Typography variant="subtitle1">
@@ -118,6 +143,7 @@ const SipPlanner = () => {
               className="flex-grow ml-2"
             />
           </div>
+
           {/* Results */}
           <div className="mt-4 p-3 flex flex-col min-w-72 bg-teal-100 rounded-lg">
             <div>
@@ -125,7 +151,6 @@ const SipPlanner = () => {
                 Results
               </Typography>
             </div>
-
             <div className="flex gap-2">
               <div className="text-md font-bold">Investment Amount: </div>
               <div className="text-md">
@@ -138,7 +163,6 @@ const SipPlanner = () => {
                 ₹{Math.round(estimatedReturns).toLocaleString()}
               </div>
             </div>
-
             <div className="flex gap-2">
               <div className="text-md font-bold">Total Value: </div>
               <div className="text-md">
@@ -147,26 +171,35 @@ const SipPlanner = () => {
             </div>
           </div>
         </div>
+
         {/* Right Side: Pie Chart */}
         <div className="w-1/2 p-4 flex-col items-center justify-center">
-          <div className="flex items-center justify-center p-2 gap-18">
-            <Button className="bg-teal-200">LumpSum</Button>
-            <Button>SIP</Button>
+          {/* Investment Type Switcher */}
+          <div className="flex items-center gap-4 justify-center">
+            <Button
+              onClick={() => setCalcType("lumpsum")}
+              variant={calcType === "lumpsum" ? "contained" : "outlined"}
+            >
+              LumpSum
+            </Button>
+            <Button
+              onClick={() => setCalcType("sip")}
+              variant={calcType === "sip" ? "contained" : "outlined"}
+            >
+              SIP
+            </Button>
           </div>
           <div className="w-full h-72 pt-4">
-            <Typography variant="h6" className="mb-2 text-center">
-              Investment vs Returns
-            </Typography>
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
                   data={data}
+                  dataKey="value"
+                  nameKey="name"
                   cx="50%"
                   cy="50%"
-                  innerRadius={60}
                   outerRadius={100}
-                  dataKey="value"
-                  label
+                  fill="#8884d8"
                 >
                   {data.map((_entry, index) => (
                     <Cell
@@ -178,6 +211,26 @@ const SipPlanner = () => {
                 <Tooltip />
               </PieChart>
             </ResponsiveContainer>
+            <div className="flex flex-col gap-4 mt-4">
+              <div className="flex gap-2 justify-center items-center">
+                <Square style={{ color: COLORS[0] }} />
+                <div
+                  className=""
+                  style={{ minWidth: "130px", textAlign: "left" }}
+                >
+                  Invested Amount
+                </div>
+              </div>
+              <div className="flex gap-2 justify-center items-center">
+                <Square style={{ color: COLORS[1] }} />
+                <div
+                  className=""
+                  style={{ minWidth: "130px", textAlign: "left" }}
+                >
+                  Estimated Returns
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
