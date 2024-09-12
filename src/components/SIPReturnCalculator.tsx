@@ -1,21 +1,15 @@
-// SIPReturnCalculator.tsx
-
-const SIPReturnCalculator = (
+export default function SIPReturnCalculator(
   monthlyInvestment: number,
   rateOfReturn: number,
-  years: number
-) => {
-  const months = years * 12;
-  const monthlyRate = rateOfReturn / 12 / 100;
-
-  const investmentAmount = monthlyInvestment * months;
-  const maturityValue =
-    monthlyInvestment *
-    ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) *
-    (1 + monthlyRate);
-  const estimatedReturns = maturityValue - investmentAmount;
+  years: number,
+  inflationRate: number
+) {
+  const n = years * 12;
+  const r = (rateOfReturn - inflationRate) / 100 / 12; // Adjust rate for inflation
+  const investmentAmount = monthlyInvestment * n;
+  const futureValue = (monthlyInvestment * (Math.pow(1 + r, n) - 1)) / r;
+  const estimatedReturns = futureValue - investmentAmount;
+  const maturityValue = futureValue;
 
   return { investmentAmount, estimatedReturns, maturityValue };
-};
-
-export default SIPReturnCalculator;
+}
