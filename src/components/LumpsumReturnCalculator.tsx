@@ -1,21 +1,13 @@
-// LumpsumReturnCalculator.tsx
-
-const LumpsumReturnCalculator = (
+export default function LumpsumReturnCalculator(
   lumpSumAmount: number,
   rateOfReturn: number,
-  years: number
-) => {
-  // Formula to calculate maturity value for Lump Sum
-  const maturityValue = lumpSumAmount * Math.pow(1 + rateOfReturn / 100, years);
-
-  // Estimated returns are the difference between maturity value and initial investment
+  years: number,
+  inflationRate: number
+) {
+  const r = (rateOfReturn - inflationRate) / 100; // Adjust rate for inflation
+  const investmentAmount = lumpSumAmount;
+  const maturityValue = lumpSumAmount * Math.pow(1 + r, years);
   const estimatedReturns = maturityValue - lumpSumAmount;
 
-  return {
-    investmentAmount: lumpSumAmount, // Unifying key with SIP return calculation
-    estimatedReturns,
-    maturityValue,
-  };
-};
-
-export default LumpsumReturnCalculator;
+  return { investmentAmount, estimatedReturns, maturityValue };
+}
