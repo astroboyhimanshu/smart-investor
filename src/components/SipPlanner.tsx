@@ -57,9 +57,15 @@ const SipPlanner = () => {
               <div className="flex items-center mb-2">
                 <input
                   value={monthlyInvestment}
-                  onChange={(e) => setMonthlyInvestment(Number(e.target.value))}
+                  onChange={(e) => {
+                    const value = Number(e.target.value);
+                    if (value <= 100000) {
+                      setMonthlyInvestment(value);
+                    }
+                  }}
                   type="number"
                   min={100}
+                  max={100000}
                   className="border rounded p-1 mr-2 w-20"
                 />
                 <Slider
@@ -84,9 +90,15 @@ const SipPlanner = () => {
               <div className="flex items-center mb-2">
                 <input
                   value={lumpSumAmount}
-                  onChange={(e) => setLumpSumAmount(Number(e.target.value))}
+                  onChange={(e) => {
+                    const value = Number(e.target.value);
+                    if (value <= 10000000) {
+                      setLumpSumAmount(value);
+                    }
+                  }}
                   type="number"
                   min={1000}
+                  max={10000000}
                   className="border rounded p-1 mr-2 w-20"
                 />
                 <Slider
@@ -109,7 +121,12 @@ const SipPlanner = () => {
           <div className="flex items-center mb-2">
             <input
               value={rateOfReturn}
-              onChange={(e) => setRateOfReturn(Number(e.target.value))}
+              onChange={(e) => {
+                const value = Number(e.target.value);
+                if (value <= 40) {
+                  setRateOfReturn(value);
+                }
+              }}
               type="number"
               min={1}
               max={40}
@@ -133,7 +150,12 @@ const SipPlanner = () => {
           <div className="flex items-center mb-4">
             <input
               value={years}
-              onChange={(e) => setYears(Number(e.target.value))}
+              onChange={(e) => {
+                const value = Number(e.target.value);
+                if (value <= 30) {
+                  setYears(value);
+                }
+              }}
               type="number"
               min={1}
               max={30}
@@ -158,7 +180,12 @@ const SipPlanner = () => {
               <div className="flex items-center mb-2">
                 <input
                   value={inflationRate}
-                  onChange={(e) => setInflationRate(Number(e.target.value))}
+                  onChange={(e) => {
+                    const value = Number(e.target.value);
+                    if (value <= 15) {
+                      setInflationRate(value);
+                    }
+                  }}
                   type="number"
                   min={0}
                   max={15}
