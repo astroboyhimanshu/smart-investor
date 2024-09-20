@@ -39,8 +39,8 @@ const SipPlanner = () => {
   const COLORS = ["#0088FE", "#00C49F"];
 
   return (
-    <div className="flex flex-col lg:flex-row flex-grow p-4 justify-center">
-      <div className="w-full lg:w-4xl flex flex-col md:flex-row lg:flex-row gap-4 bg-gray-100 rounded-xl shadow-md p-4">
+    <div className="flex flex-col lg:flex-row flex-grow justify-center items-center min-h-screen p-4 bg-[#0088FE]">
+      <div className="w-1/2 lg:w-4xl flex flex-col md:flex-row lg:flex-row gap-4 bg-gray-100 rounded-xl shadow-md p-4">
         {/* Left Side: Inputs and Results */}
         <div className="w-full lg:w-1/2 p-4">
           <div className="flex justify-between items-center mb-4">
