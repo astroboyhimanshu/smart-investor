@@ -1,18 +1,11 @@
 import { Button, Typography, Container, Box } from "@mui/material";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { RingLoader } from "react-spinners";
 
 const HomePage = () => {
-  const [showSpinner, setShowSpinner] = useState(false);
   const navigate = useNavigate();
 
   const handleSIPCalculatorClick = () => {
-    setShowSpinner(true);
-    setTimeout(() => {
-      setShowSpinner(false);
-      navigate("/sip-planner"); // Navigate to the SIP Planner page
-    }, 2000);
+    navigate("/sip-planner");
   };
 
   const handleInvestmentPlannerClick = () => {
@@ -58,26 +51,22 @@ const HomePage = () => {
 
           <div className="flex justify-center mb-6">
             <Box>
-              {showSpinner ? (
-                <RingLoader size={48} color={"#ffffff"} loading={showSpinner} />
-              ) : (
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={handleSIPCalculatorClick}
-                  sx={{
-                    padding: "10px 24px",
-                    fontSize: "1rem",
-                    fontWeight: "bold",
-                    transition: "background 0.3s ease",
-                    ":hover": {
-                      backgroundColor: "#4CAF50",
-                    },
-                  }}
-                >
-                  SIP Calculator
-                </Button>
-              )}
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSIPCalculatorClick}
+                sx={{
+                  padding: "10px 24px",
+                  fontSize: "1rem",
+                  fontWeight: "bold",
+                  transition: "background 0.3s ease",
+                  ":hover": {
+                    backgroundColor: "#4CAF50",
+                  },
+                }}
+              >
+                SIP Calculator
+              </Button>
             </Box>
 
             <Button
