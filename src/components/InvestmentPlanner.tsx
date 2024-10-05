@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 const InvestmentPlanner = () => {
+  const navigate = useNavigate();
+  const handleGoldClick = () => {
+    navigate("/investment-planner/gold");
+  };
+
   return (
-    <div className="container mx-auto px-4 py-10 bg-gradient-to-b from-blue-50 to-blue-200 min-h-screen">
+    <div className="w-full h-full mx-auto px-4 py-10 bg-gradient-to-b from-blue-50 to-blue-200 min-h-screen">
       {/* Header Section */}
       <div className="flex flex-col items-center text-center mb-12">
         <div className="text-4xl font-extrabold text-gray-900">
@@ -32,7 +39,10 @@ const InvestmentPlanner = () => {
             <div className="text-gray-600 text-center mt-2">
               Invest in gold for stable returns and a hedge against inflation.
             </div>
-            <button className="mt-6 w-full bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600">
+            <button
+              className="mt-6 w-full bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600"
+              onClick={handleGoldClick}
+            >
               Learn More
             </button>
           </div>
