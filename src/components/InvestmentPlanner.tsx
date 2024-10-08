@@ -2,8 +2,9 @@ import { useNavigate } from "react-router-dom";
 
 const InvestmentPlanner = () => {
   const navigate = useNavigate();
-  const handleGoldClick = () => {
-    navigate("/investment-planner/gold");
+
+  const handleClick = (type: string) => {
+    navigate(`/investment-planner/${type}`);
   };
 
   return (
@@ -41,7 +42,7 @@ const InvestmentPlanner = () => {
             </div>
             <button
               className="mt-6 w-full bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600"
-              onClick={handleGoldClick}
+              onClick={() => handleClick("gold")}
             >
               Learn More
             </button>
@@ -60,7 +61,10 @@ const InvestmentPlanner = () => {
             <div className="text-gray-600 text-center mt-2">
               Diversify your portfolio with professionally managed funds.
             </div>
-            <button className="mt-6 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">
+            <button
+              className="mt-6 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600"
+              onClick={() => handleClick("mutualFunds")}
+            >
               Learn More
             </button>
           </div>
