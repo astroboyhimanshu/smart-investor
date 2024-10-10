@@ -1,4 +1,3 @@
-// investmentData.ts
 export const investmentData = {
   gold: {
     title: "Gold Investment",
@@ -68,11 +67,25 @@ export const investmentData = {
         title: "Why Invest in Mutual Funds?",
         items: [
           {
-            imgSrc: "mutualFunds1.png",
+            imgSrc: "/src/assets/mutualFunds1.png",
             imgAlt: "Mutual fund performance",
             title: "Diversification",
             description:
               "Mutual funds spread risk across various assets, reducing the impact of poor performance by any single investment.",
+          },
+          {
+            imgSrc: "/src/assets/mutualFunds2.png",
+            imgAlt: "Growth of investment",
+            title: "Potential for Growth",
+            description:
+              "Many mutual funds offer the potential for higher returns over time by investing in a range of stocks and bonds.",
+          },
+          {
+            imgSrc: "/src/assets/mutualFunds3.png",
+            imgAlt: "Mutual funds accessibility",
+            title: "Accessibility",
+            description:
+              "Mutual funds can be purchased with a relatively small amount, making them accessible to many investors.",
           },
         ],
       },
@@ -86,9 +99,9 @@ export const investmentData = {
             "Managed by financial experts who analyze and select the best investments for the fund.",
         },
         {
-          title: "Accessibility",
+          title: "Liquidity",
           description:
-            "Mutual funds can be invested in with a relatively small amount of money, making them accessible to many investors.",
+            "Mutual funds are generally easy to buy and sell, providing flexibility for investors.",
         },
       ],
     },
@@ -98,5 +111,201 @@ export const investmentData = {
         "Mutual funds can yield reliable returns and provide a convenient way to invest in a diversified portfolio.",
     },
   },
-  // Add more options here (e.g., ETFs, stocks, bonds, etc.)
+  etfs: {
+    title: "ETFs Investment",
+    header: {
+      title: "Investing in ETFs",
+      description:
+        "ETFs are funds that track an index, commodity, or basket of assets and trade on the stock exchange.",
+    },
+    sections: [
+      {
+        title: "Why Invest in ETFs?",
+        items: [
+          {
+            imgSrc: "/src/assets/etf1.png",
+            imgAlt: "ETF growth chart",
+            title: "Low Cost",
+            description:
+              "ETFs generally have lower fees than mutual funds, making them cost-effective.",
+          },
+          {
+            imgSrc: "/src/assets/etf2.png",
+            imgAlt: "ETF trading",
+            title: "Ease of Trading",
+            description:
+              "ETFs can be bought and sold throughout the trading day on the stock exchange.",
+          },
+        ],
+      },
+    ],
+    benefits: {
+      title: "Benefits of ETFs",
+      items: [
+        {
+          title: "Flexibility",
+          description:
+            "ETFs offer the flexibility to diversify across sectors and asset classes.",
+        },
+        {
+          title: "Transparency",
+          description:
+            "ETF holdings are publicly disclosed on a daily basis, providing transparency to investors.",
+        },
+      ],
+    },
+    finalThoughts: {
+      title: "Final Thoughts on ETFs",
+      description:
+        "ETFs are a versatile investment that provides both diversification and flexibility, suitable for various investment goals.",
+    },
+  },
+  stocks: {
+    title: "Stocks Investment",
+    header: {
+      title: "Investing in Stocks",
+      description:
+        "Stocks represent ownership in a company and provide potential for growth as the company succeeds.",
+    },
+    sections: [
+      {
+        title: "Why Invest in Stocks?",
+        items: [
+          {
+            imgSrc: "/src/assets/stocks1.png",
+            imgAlt: "Stock market growth",
+            title: "Capital Appreciation",
+            description:
+              "Stocks have the potential for significant growth over time as companies grow in value.",
+          },
+          {
+            imgSrc: "/src/assets/stocks2.png",
+            imgAlt: "Dividend payout",
+            title: "Dividends",
+            description:
+              "Some stocks pay dividends, providing a steady income stream in addition to stock value appreciation.",
+          },
+        ],
+      },
+    ],
+    benefits: {
+      title: "Benefits of Stocks",
+      items: [
+        {
+          title: "Ownership",
+          description:
+            "Owning stocks means you have a share in the company's profits and assets.",
+        },
+        {
+          title: "Liquidity",
+          description:
+            "Stocks are highly liquid, making them easy to buy and sell on the stock market.",
+        },
+      ],
+    },
+    finalThoughts: {
+      title: "Final Thoughts on Stocks",
+      description:
+        "Stocks offer substantial growth potential but come with higher risk, suitable for long-term investors willing to weather market fluctuations.",
+    },
+  },
+  bonds: {
+    title: "Bonds Investment",
+    header: {
+      title: "Investing in Bonds",
+      description:
+        "Bonds are a fixed-income investment that provides regular interest payments and returns the principal on maturity.",
+    },
+    sections: [
+      {
+        title: "Why Invest in Bonds?",
+        items: [
+          {
+            imgSrc: "/src/assets/bonds1.png",
+            imgAlt: "Bond certificate",
+            title: "Steady Income",
+            description:
+              "Bonds provide regular interest payments, making them ideal for income-focused investors.",
+          },
+          {
+            imgSrc: "/src/assets/bonds2.png",
+            imgAlt: "Bond stability",
+            title: "Lower Risk",
+            description:
+              "Bonds are generally less risky than stocks, especially government bonds.",
+          },
+        ],
+      },
+    ],
+    benefits: {
+      title: "Benefits of Bonds",
+      items: [
+        {
+          title: "Capital Preservation",
+          description:
+            "Bonds help preserve capital while providing steady returns.",
+        },
+        {
+          title: "Portfolio Diversification",
+          description:
+            "Including bonds in your portfolio can reduce overall risk and volatility.",
+        },
+      ],
+    },
+    finalThoughts: {
+      title: "Final Thoughts on Bonds",
+      description:
+        "Bonds are a reliable, income-generating investment with lower risk, suitable for conservative and income-focused investors.",
+    },
+  },
+  cryptocurrency: {
+    title: "Cryptocurrency Investment",
+    header: {
+      title: "Investing in Cryptocurrency",
+      description:
+        "Cryptocurrencies are digital assets using cryptography for secure financial transactions, offering high potential returns and risks.",
+    },
+    sections: [
+      {
+        title: "Why Invest in Cryptocurrency?",
+        items: [
+          {
+            imgSrc: "/src/assets/crypto1.png",
+            imgAlt: "Cryptocurrency chart",
+            title: "High Return Potential",
+            description:
+              "Cryptocurrencies can provide high returns over short periods but come with significant risks.",
+          },
+          {
+            imgSrc: "/src/assets/crypto2.png",
+            imgAlt: "Decentralized network",
+            title: "Decentralization",
+            description:
+              "Cryptocurrencies operate on decentralized networks, free from government control.",
+          },
+        ],
+      },
+    ],
+    benefits: {
+      title: "Benefits of Cryptocurrency",
+      items: [
+        {
+          title: "Innovation",
+          description:
+            "Cryptocurrencies drive technological advancement in finance, enabling decentralized financial solutions.",
+        },
+        {
+          title: "Liquidity",
+          description:
+            "Most major cryptocurrencies are highly liquid, making it easy to buy and sell quickly.",
+        },
+      ],
+    },
+    finalThoughts: {
+      title: "Final Thoughts on Cryptocurrency",
+      description:
+        "Cryptocurrency is a high-risk, high-reward investment best suited for those with high risk tolerance and a solid understanding of the market.",
+    },
+  },
+  // Add more options here if needed
 };
