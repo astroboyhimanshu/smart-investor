@@ -83,7 +83,10 @@ const InvestmentPlanner = () => {
               Invest in a diverse basket of assets with low costs and high
               liquidity.
             </div>
-            <button className="mt-6 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
+            <button
+              className="mt-6 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600"
+              onClick={() => handleClick("etfs")}
+            >
               Learn More
             </button>
           </div>
@@ -102,7 +105,10 @@ const InvestmentPlanner = () => {
               Invest directly in companies for potential high returns, but with
               higher risk.
             </div>
-            <button className="mt-6 w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600">
+            <button
+              className="mt-6 w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600"
+              onClick={() => handleClick("stocks")}
+            >
               Learn More
             </button>
           </div>
@@ -121,7 +127,10 @@ const InvestmentPlanner = () => {
               Invest in bonds for steady interest income and lower risk compared
               to stocks.
             </p>
-            <button className="mt-6 w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600">
+            <button
+              className="mt-6 w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600"
+              onClick={() => handleClick("bonds")}
+            >
               Learn More
             </button>
           </div>
@@ -140,7 +149,10 @@ const InvestmentPlanner = () => {
               Explore high-risk, high-reward investments with digital assets
               like Bitcoin.
             </p>
-            <button className="mt-6 w-full bg-indigo-500 text-white py-2 rounded-lg hover:bg-indigo-600">
+            <button
+              className="mt-6 w-full bg-indigo-500 text-white py-2 rounded-lg hover:bg-indigo-600"
+              onClick={() => handleClick("cryptocurrency")}
+            >
               Learn More
             </button>
           </div>
