@@ -4,6 +4,9 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import SIPReturnCalculator from "./SIPReturnCalculator";
 import LumpsumReturnCalculator from "./LumpsumReturnCalculator";
 import { Square } from "@mui/icons-material";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import SIPReportTemplate from "../templates/SipReportTemplate";
+import DownloadIcon from "@mui/icons-material/Download";
 
 const SipPlanner = () => {
   const [monthlyInvestment, setMonthlyInvestment] = useState<number>(100);
@@ -297,6 +300,33 @@ const SipPlanner = () => {
                 <Typography variant="subtitle2">
                   Est. Returns: ₹{Math.round(estimatedReturns).toLocaleString()}
                 </Typography>
+              </div>
+              <div className="flex justify-center mt-16">
+                <PDFDownloadLink
+                  document={
+                    <SIPReportTemplate
+                      monthlyInvestment={monthlyInvestment}
+                      lumpSumAmount={lumpSumAmount}
+                      rateOfReturn={rateOfReturn}
+                      years={years}
+                      investmentAmount={investmentAmount}
+                      estimatedReturns={estimatedReturns}
+                      maturityValue={maturityValue}
+                      calcType={calcType}
+                      inflationRate={inflationRate}
+                    />
+                  }
+                  fileName="SIP_Plan_Report.pdf"
+                >
+                  <Button
+                    variant="contained"
+                    sx={{ backgroundColor: "teal" }}
+                    onClick={() => {}}
+                  >
+                    <DownloadIcon sx={{ mr: 1 }} />
+                    Download Plan
+                  </Button>
+                </PDFDownloadLink>
               </div>
             </div>
           </div>
