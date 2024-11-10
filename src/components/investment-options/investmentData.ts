@@ -136,6 +136,13 @@ export const investmentData = {
             description:
               "ETFs can be bought and sold throughout the trading day on the stock exchange.",
           },
+          {
+            imgSrc: "/src/assets/mutualFunds1.png",
+            imgAlt: "Diversification",
+            title: "Diversification",
+            description:
+              "ETFs offer broad exposure to various asset classes, sectors, or regions, reducing risk through diversification.",
+          },
         ],
       },
     ],
@@ -184,6 +191,13 @@ export const investmentData = {
             title: "Dividends",
             description:
               "Some stocks pay dividends, providing a steady income stream in addition to stock value appreciation.",
+          },
+          {
+            imgSrc: "/src/assets/stocks3.png",
+            imgAlt: "Stock liquidity",
+            title: "Liquidity",
+            description:
+              "Stocks are generally easy to buy and sell on the market, allowing you quick access to your money if needed.",
           },
         ],
       },
@@ -234,6 +248,13 @@ export const investmentData = {
             description:
               "Bonds are generally less risky than stocks, especially government bonds.",
           },
+          {
+            imgSrc: "/src/assets/bonds3.png",
+            imgAlt: "Capital preservation",
+            title: "Capital Preservation",
+            description:
+              "Bonds can help preserve your initial investment, making them a good option for conservative investors looking to protect their principal.",
+          },
         ],
       },
     ],
@@ -282,6 +303,13 @@ export const investmentData = {
             title: "Decentralization",
             description:
               "Cryptocurrencies operate on decentralized networks, free from government control.",
+          },
+          {
+            imgSrc: "/src/assets/crypto3.png",
+            imgAlt: "Global accessibility",
+            title: "Global Accessibility",
+            description:
+              "Cryptocurrencies can be accessed and traded by anyone with an internet connection, providing global financial inclusivity.",
           },
         ],
       },
