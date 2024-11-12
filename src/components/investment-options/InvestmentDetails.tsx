@@ -26,7 +26,7 @@ const InvestmentDetails = () => {
       {investment.sections.map((section, index) => (
         <div
           key={index}
-          className="bg-white shadow-lg rounded-2xl p-6 mb-12 hover:shadow-xl"
+          className="bg-white w-[80%] m-auto shadow-lg rounded-2xl p-6 mb-12 hover:shadow-xl"
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
             {section.title}
@@ -58,7 +58,7 @@ const InvestmentDetails = () => {
       ))}
 
       {/* Benefits Section */}
-      <div className="bg-white hover:shadow-xl rounded-2xl p-8 text-center mb-12">
+      <div className="bg-white hover:shadow-xl rounded-2xl p-8 text-center mb-12 w-[80%] m-auto">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
           {investment.benefits.title}
         </h2>
@@ -71,12 +71,12 @@ const InvestmentDetails = () => {
           ))}
         </ul>
         <button className="mt-8 bg-yellow-600 text-white py-3 px-8 rounded-lg hover:bg-yellow-700 text-lg font-medium">
-          Start Investing
+          Start Planning
         </button>
       </div>
 
       {/* Final Thoughts Section */}
-      <div className="bg-gray-50 hover:shadow-xl rounded-2xl p-8 text-center">
+      <div className="bg-gray-50 hover:shadow-xl rounded-2xl p-8 text-center w-[80%] m-auto">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
           {investment.finalThoughts.title}
         </h2>

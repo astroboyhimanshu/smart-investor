@@ -160,7 +160,7 @@ const InvestmentPlanner = () => {
       </div>
 
       {/* Actionable Advice Section */}
-      <div className="bg-gray-50 shadow-md rounded-2xl p-8 text-center">
+      <div className="bg-gray-50 shadow-md rounded-2xl p-8 text-center w-[80%] m-auto">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
           Steps to Start Investing
         </h2>
