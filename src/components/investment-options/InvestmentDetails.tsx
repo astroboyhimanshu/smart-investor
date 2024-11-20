@@ -1,7 +1,7 @@
-// InvestmentDetails.tsx
 import { useParams } from "react-router-dom";
 import { investmentData } from "./investmentData";
 import { Investment } from "./investmentInterface";
+import { useNavigate } from "react-router-dom";
 
 const InvestmentDetails = () => {
   const { type } = useParams<{ type: string }>(); // specify the type here
@@ -9,17 +9,44 @@ const InvestmentDetails = () => {
     investmentData[type as keyof typeof investmentData]; // Use a type assertion
 
   if (!investment) return <div>Investment option not found.</div>;
+  const navigate = useNavigate();
+  const goHome = () => {
+    navigate("/");
+  };
+
+  const goToInvestmentOptions = () => {
+    navigate("/investment-planner");
+  };
 
   return (
-    <div className="w-full h-full mx-auto px-4 py-10 bg-gradient-to-b from-cyan-100 via-blue-300 to-indigo-400 min-h-screen">
+    <div className="w-full h-full mx-auto px-4 py-10 bg-gradient-to-b from-cyan-100 via-blue-300 to-indigo-400 min-h-screen relative">
       {/* Header Section */}
-      <div className="flex flex-col items-center text-center mb-12">
-        <h1 className="text-6xl font-extrabold text-gray-800">
+      <div className="flex flex-col items-center text-center mb-6">
+        <div className="text-6xl font-extrabold text-gray-800">
           {investment.header.title}
-        </h1>
-        <p className="text-gray-700 mt-4 text-lg max-w-2xl">
+        </div>
+        <div className="text-gray-700 mt-4 text-lg max-w-2xl">
           {investment.header.description}
-        </p>
+        </div>
+
+        <div className="flex p-4 gap-8">
+          <div className="flex">
+            <button
+              onClick={goHome}
+              className=" bg-yellow-600 text-white py-2 px-4 rounded-lg hover:bg-yellow-700 text-sm font-medium"
+            >
+              Home Page
+            </button>
+          </div>
+          <div className="flex">
+            <button
+              onClick={goToInvestmentOptions}
+              className=" bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 text-sm font-medium"
+            >
+              Investment Options
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Dynamic Sections */}
@@ -83,8 +110,11 @@ const InvestmentDetails = () => {
         <p className="text-gray-700 mb-6">
           {investment.finalThoughts.description}
         </p>
-        <button className="bg-yellow-600 text-white py-3 px-8 rounded-lg hover:bg-yellow-700 text-lg font-medium">
-          Explore More
+        <button
+          onClick={goHome}
+          className="bg-yellow-600 text-white py-3 px-8 rounded-lg hover:bg-yellow-700 text-lg font-medium"
+        >
+          Home Page
         </button>
       </div>
     </div>

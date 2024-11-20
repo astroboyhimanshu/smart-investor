@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const InvestmentPlanner = () => {
@@ -7,10 +8,14 @@ const InvestmentPlanner = () => {
     navigate(`/investment-planner/${type}`);
   };
 
+  const goHome = () => {
+    navigate("/");
+  };
+
   return (
     <div className="w-full h-full mx-auto px-4 py-10 bg-gradient-to-b from-blue-50 to-blue-200 min-h-screen">
       {/* Header Section */}
-      <div className="flex flex-col items-center text-center mb-12">
+      <div className="flex flex-col items-center text-center mb-2">
         <div className="text-4xl font-extrabold text-gray-900">
           Smart Investment Planner
         </div>
@@ -18,6 +23,11 @@ const InvestmentPlanner = () => {
           Learn how to plan your investments wisely and explore different
           options to maximize your returns. Take control of your financial
           future today!
+        </div>
+        <div className="flex p-4">
+          <Button variant="contained" onClick={goHome}>
+            Home Page
+          </Button>
         </div>
       </div>
 
