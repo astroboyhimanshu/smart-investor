@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { investmentData } from "./investmentData";
-import { Investment } from "./investmentInterface";
+import { Investment } from "../../types/investmentInterface";
 import { useNavigate } from "react-router-dom";
 
 const InvestmentDetails = () => {
@@ -14,8 +14,12 @@ const InvestmentDetails = () => {
     navigate("/");
   };
 
-  const goToInvestmentOptions = () => {
-    navigate("/investment-planner");
+  const openPlanGenerator = () => {
+    navigate("/plan-generator");
+  };
+
+  const openInvestmentOptions = () => {
+    navigate("/investment-options");
   };
 
   return (
@@ -40,7 +44,7 @@ const InvestmentDetails = () => {
           </div>
           <div className="flex">
             <button
-              onClick={goToInvestmentOptions}
+              onClick={openInvestmentOptions}
               className=" bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 text-sm font-medium"
             >
               Investment Options
@@ -97,7 +101,10 @@ const InvestmentDetails = () => {
             </li>
           ))}
         </ul>
-        <button className="mt-8 bg-yellow-600 text-white py-3 px-8 rounded-lg hover:bg-yellow-700 text-lg font-medium">
+        <button
+          className="mt-8 bg-blue-500 text-white py-3 px-8 rounded-lg hover:bg-blue-700 text-lg font-medium"
+          onClick={openPlanGenerator}
+        >
           Start Planning
         </button>
       </div>
