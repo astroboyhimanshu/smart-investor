@@ -8,4 +8,3 @@ const model: GenerativeModel = genAI.getGenerativeModel({
 });
 
 export { model };
-//
