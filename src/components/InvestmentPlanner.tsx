@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import PlanGenerator from "./plan-generator/PlanGenerator";
 
 const InvestmentPlanner = () => {
   const navigate = useNavigate();
@@ -10,6 +11,10 @@ const InvestmentPlanner = () => {
 
   const goHome = () => {
     navigate("/");
+  };
+
+  const openPlanGenerator = () => {
+    navigate("/plan-generator");
   };
 
   return (
@@ -191,7 +196,10 @@ const InvestmentPlanner = () => {
             assets.
           </li>
         </ol>
-        <button className="mt-8 bg-green-500 text-white py-3 px-8 rounded-lg hover:bg-green-600 text-lg font-medium">
+        <button
+          className="mt-8 bg-green-500 text-white py-3 px-8 rounded-lg hover:bg-green-600 text-lg font-medium"
+          onClick={openPlanGenerator}
+        >
           Get Started
         </button>
       </div>
