@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import InvestmentPlanForm from "../InvestmentPlanForm";
+import InvestmentPlanForm from "./InvestmentPlanForm";
 import { MdArrowForward } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
@@ -33,13 +33,16 @@ const PlanGenerator = () => {
           </Button>
         </div>
         <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-          <div className="bg-indigo-600 py-6 px-8">
+          <div className="bg-indigo-600 py-12 px-8 relative">
             <h2 className="text-3xl font-bold text-white">
               AI Powered Financial Planning Assistant
             </h2>
             <p className="text-indigo-100 mt-2">
               Create your personalized investment roadmap in seconds
             </p>
+            <div className="absolute bottom-2 right-4 text-white text-sm">
+              Powered with Gemini
+            </div>
           </div>
 
           <div className="p-8">

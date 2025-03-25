@@ -1,4 +1,10 @@
-// investmentInterfaces.ts
+export interface InvestmentFormData {
+  income: number;
+  riskTolerance: string;
+  goal: string;
+  timeHorizon: number;
+}
+
 export interface Investment {
   header: {
     title: string;

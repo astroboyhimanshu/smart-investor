@@ -1,12 +1,6 @@
 import { useEffect, useState } from "react";
-import { model } from "../services/geminiService";
-
-interface InvestmentFormData {
-  income: number;
-  riskTolerance: string;
-  goal: string;
-  timeHorizon: number;
-}
+import { model } from "../../services/geminiService";
+import { InvestmentFormData } from "../../types/types";
 
 const InvestmentPlanForm = () => {
   const [formData, setFormData] = useState<InvestmentFormData>({
@@ -64,7 +58,7 @@ const InvestmentPlanForm = () => {
           if (progressInterval) clearInterval(progressInterval);
           return prevProgress;
         });
-      }, 500); // Update every 500ms
+      }, 1000); // Update every 1000ms
     }
 
     return () => {

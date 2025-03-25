@@ -176,7 +176,7 @@ const InvestmentPlanner = () => {
       {/* Actionable Advice Section */}
       <div className="bg-gray-50 shadow-md rounded-2xl p-8 text-center w-[80%] m-auto">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
-          Steps to Start Investing
+          Steps to Start Investing using Nebula
         </h2>
         <ol className="list-decimal text-left pl-10 text-gray-700 space-y-3">
           <li>

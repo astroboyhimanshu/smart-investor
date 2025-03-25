@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { investmentData } from "./investmentData";
-import { Investment } from "../../types/investmentInterface";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
+import { Investment } from "../../types/types";
 
 const InvestmentDetails = () => {
   const { type } = useParams<{ type: string }>(); // specify the type here
