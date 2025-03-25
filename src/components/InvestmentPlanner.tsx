@@ -1,6 +1,5 @@
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import PlanGenerator from "./plan-generator/PlanGenerator";
 
 const InvestmentPlanner = () => {
   const navigate = useNavigate();

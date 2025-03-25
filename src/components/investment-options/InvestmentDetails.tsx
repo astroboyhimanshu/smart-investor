@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { investmentData } from "./investmentData";
 import { Investment } from "../../types/investmentInterface";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 
 const InvestmentDetails = () => {
   const { type } = useParams<{ type: string }>(); // specify the type here
@@ -35,20 +36,44 @@ const InvestmentDetails = () => {
 
         <div className="flex p-4 gap-8">
           <div className="flex">
-            <button
+            <Button
               onClick={goHome}
-              className=" bg-yellow-600 text-white py-2 px-4 rounded-lg hover:bg-yellow-700 text-sm font-medium"
+              variant="contained"
+              sx={{
+                backgroundColor: "#ca8a04",
+                color: "white",
+                paddingY: "8px",
+                paddingX: "16px",
+                borderRadius: "8px",
+                "&:hover": {
+                  backgroundColor: "#a16207",
+                },
+                fontSize: "0.875rem",
+                fontWeight: 500,
+              }}
             >
               Home Page
-            </button>
+            </Button>
           </div>
           <div className="flex">
-            <button
+            <Button
               onClick={openInvestmentOptions}
-              className=" bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 text-sm font-medium"
+              variant="contained"
+              sx={{
+                backgroundColor: "#16a34a",
+                color: "white",
+                paddingY: 1, // px-2
+                paddingX: 2, // px-4
+                borderRadius: "8px",
+                "&:hover": {
+                  backgroundColor: "#15803d",
+                },
+                fontSize: "0.875rem",
+                fontWeight: 500,
+              }}
             >
               Investment Options
-            </button>
+            </Button>
           </div>
         </div>
       </div>

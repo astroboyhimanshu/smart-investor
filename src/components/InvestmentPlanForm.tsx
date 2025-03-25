@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { model } from "../services/geminiService";
-import { BarLoader, ScaleLoader } from "react-spinners";
 
 interface InvestmentFormData {
   income: number;
@@ -9,7 +8,7 @@ interface InvestmentFormData {
   timeHorizon: number;
 }
 
-const InvestmentPlanForm: React.FC = () => {
+const InvestmentPlanForm = () => {
   const [formData, setFormData] = useState<InvestmentFormData>({
     income: 0,
     riskTolerance: "Moderate",
@@ -19,6 +18,7 @@ const InvestmentPlanForm: React.FC = () => {
 
   const [investmentResult, setInvestmentResult] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [loadingProgress, setLoadingProgress] = useState<number>(0);
   const [error, setError] = useState<string>("");
 
   const handleChange = (
@@ -51,6 +51,26 @@ const InvestmentPlanForm: React.FC = () => {
       throw new Error("Failed to generate investment plan. Please try again.");
     }
   };
+
+  useEffect(() => {
+    let progressInterval: ReturnType<typeof setInterval> | null = null;
+
+    if (isLoading) {
+      progressInterval = setInterval(() => {
+        setLoadingProgress((prevProgress) => {
+          if (prevProgress < 90) {
+            return prevProgress + Math.floor(Math.random() * 10) + 5;
+          }
+          if (progressInterval) clearInterval(progressInterval);
+          return prevProgress;
+        });
+      }, 500); // Update every 500ms
+    }
+
+    return () => {
+      if (progressInterval) clearInterval(progressInterval);
+    };
+  }, [isLoading]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -175,6 +195,16 @@ const InvestmentPlanForm: React.FC = () => {
           )}
         </button>
       </form>
+
+      {/* Progress bar */}
+      {isLoading && (
+        <div className="w-full bg-gray-200 rounded-full h-2.5 mt-4">
+          <div
+            className="bg-indigo-600 h-2.5 rounded-full transition-all duration-500 ease-out"
+            style={{ width: `${loadingProgress}%` }}
+          ></div>
+        </div>
+      )}
 
       {error && (
         <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
