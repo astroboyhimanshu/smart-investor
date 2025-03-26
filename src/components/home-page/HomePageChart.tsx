@@ -23,8 +23,8 @@ const HomePageChart = () => {
       <ResponsiveContainer width="100%" height={350}>
         <LineChart data={investmentData}>
           <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-          <XAxis dataKey="name" stroke="#9333ea" />
-          <YAxis stroke="#9333ea" />
+          <XAxis dataKey="name" type="category" scale="auto" />
+          <YAxis type="number" scale="auto" />
           <Tooltip
             contentStyle={{
               backgroundColor: "#9333ea",

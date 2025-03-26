@@ -36,9 +36,9 @@ export const features: FeatureType[] = [
       className: "text-sky-500",
       size: 48,
     }),
-    title: "Advanced Market Intelligence",
+    title: "Beginner's Guide to Investing",
     description:
-      "Real-time, AI-powered insights driving strategic investment decisions.",
+      "Embark on your investment journey! Discover beginner-friendly resources for your first investment.",
     gradient: "from-sky-50 to-sky-100",
     navigateTo: "/investment-options",
     buttonText: "Explore Options",
