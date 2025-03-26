@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import InvestmentDetails from "./components/investment-options/InvestmentDetails";
 import PlanGenerator from "./components/plan-generator/PlanGenerator";
-const HomePage = lazy(() => import("./components/HomePage"));
+const HomePage = lazy(() => import("./components/home-page/HomePage"));
 const SipPlanner = lazy(() => import("./components/sip-calculator/SipPlanner"));
 const InvestmentPlanner = lazy(() => import("./components/InvestmentPlanner"));
 

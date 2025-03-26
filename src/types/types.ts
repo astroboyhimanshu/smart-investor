@@ -31,3 +31,12 @@ export interface Investment {
     description: string;
   };
 }
+
+export interface FeatureType {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  gradient: string;
+  navigateTo: string;
+  buttonText: string;
+}
