@@ -334,7 +334,7 @@ const InvestmentPlanForm = () => {
                     fill="#8884d8"
                     dataKey="value"
                   >
-                    {prepareChartData(investmentResult).map((entry, index) => (
+                    {prepareChartData(investmentResult).map((_entry, index) => (
                       <Cell
                         key={`cell-${index}`}
                         fill={COLORS[index % COLORS.length]}
@@ -355,7 +355,7 @@ const InvestmentPlanForm = () => {
                   <Tooltip formatter={(value) => `${value}%`} />
                   <Legend />
                   <Bar dataKey="value" name="Allocation" radius={[5, 5, 0, 0]}>
-                    {prepareChartData(investmentResult).map((entry, index) => (
+                    {prepareChartData(investmentResult).map((_entry, index) => (
                       <Cell
                         key={`cell-${index}`}
                         fill={COLORS[index % COLORS.length]}
