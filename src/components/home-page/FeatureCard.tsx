@@ -65,7 +65,7 @@ const FeatureCard = ({
         onClick={handleClick}
         variant="contained"
         sx={{
-          width: "45%",
+          width: "100%",
           backgroundColor: buttonStyles.buttonColor,
           color: buttonStyles.textColor,
           "&:hover": {
