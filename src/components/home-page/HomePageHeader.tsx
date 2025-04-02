@@ -26,19 +26,23 @@ const HomePageHeader = ({
             technology. Personalized strategies, predictive insights, and
             intelligent planning.
           </p>
-          <div className="flex space-x-4">
-            <button
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full hover:from-purple-700 hover:to-indigo-700 transition-all flex items-center shadow-lg shadow-purple-200"
-              onClick={handleOpenPlanGenerator}
-            >
-              Start Planning with AI <MdChevronRight className="ml-2" />
-            </button>
-            <button
-              className="border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-full hover:bg-purple-50 transition flex items-center"
-              onClick={handleExploreFeatures}
-            >
-              Explore Features
-            </button>
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-stretch w-full">
+            <div className="flex-1 md:flex-none">
+              <button
+                className="w-full md:w-auto bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full hover:from-purple-700 hover:to-indigo-700 transition-all flex items-center justify-center shadow-lg shadow-purple-200"
+                onClick={handleOpenPlanGenerator}
+              >
+                Start Planning with AI <MdChevronRight className="ml-2" />
+              </button>
+            </div>
+            <div className="flex-1 md:flex-none">
+              <button
+                className="w-full md:w-auto border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-full hover:bg-purple-50 transition flex items-center justify-center"
+                onClick={handleExploreFeatures}
+              >
+                Explore Features
+              </button>
+            </div>
           </div>
         </div>
         <div className="relative">

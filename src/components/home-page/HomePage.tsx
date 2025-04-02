@@ -19,7 +19,7 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900 font-inter antialiased">
-      <Navbar />
+      <Navbar featuresRef={featuresRef} />
       <HomePageHeader
         handleOpenPlanGenerator={handleOpenPlanGenerator}
         featuresRef={featuresRef}

@@ -1,6 +1,6 @@
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -10,21 +10,21 @@ import {
 
 // Investment growth data
 const investmentData = [
-  { name: "2020", investment: 10000 },
-  { name: "2021", investment: 15000 },
-  { name: "2022", investment: 22000 },
-  { name: "2023", investment: 32000 },
-  { name: "2024", investment: 45000 },
+  { year: "2025", investment: 100000 },
+  { year: "2026", investment: 180000 },
+  { year: "2027", investment: 270000 },
+  { year: "2028", investment: 400000 },
+  { year: "2029", investment: 580000 },
 ];
 
 const HomePageChart = () => {
   return (
     <div>
       <ResponsiveContainer width="100%" height={350}>
-        <LineChart data={investmentData}>
+        <BarChart data={investmentData}>
           <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-          <XAxis dataKey="name" type="category" scale="auto" />
-          <YAxis type="number" scale="auto" />
+          <XAxis dataKey="year" />
+          <YAxis />
           <Tooltip
             contentStyle={{
               backgroundColor: "#9333ea",
@@ -33,14 +33,13 @@ const HomePageChart = () => {
             }}
             itemStyle={{ color: "white" }}
           />
-          <Line
-            type="monotone"
+          <Bar
             dataKey="investment"
-            stroke="#9333ea"
-            strokeWidth={3}
-            dot={{ r: 6, fill: "#9333ea" }}
+            fill="#9333ea"
+            barSize={50}
+            radius={[10, 10, 0, 0]}
           />
-        </LineChart>
+        </BarChart>
       </ResponsiveContainer>
     </div>
   );
