@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { model } from "../../services/geminiService";
-import { InvestmentFormData } from "../../types/types";
+import { InvestmentFormData } from "../../types/interfaces";
 import {
   PieChart,
   Pie,
