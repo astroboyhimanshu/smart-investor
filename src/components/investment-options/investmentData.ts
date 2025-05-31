@@ -11,21 +11,21 @@ export const investmentData = {
         title: "Why Invest in Gold?",
         items: [
           {
-            imgSrc: "/src/assets/Gold2.png",
+            imgSrc: "/assets/Gold2.png",
             imgAlt: "Gold bars",
             title: "Hedge Against Inflation",
             description:
               "Gold helps combat inflation by maintaining its value over time.",
           },
           {
-            imgSrc: "/src/assets/Gold3.png",
+            imgSrc: "/assets/Gold3.png",
             imgAlt: "Gold jewelry",
             title: "Cultural Significance",
             description:
               "Gold holds cultural importance and is often associated with wealth and status.",
           },
           {
-            imgSrc: "/src/assets/GoldStability.png",
+            imgSrc: "/assets/GoldStability.png",
             imgAlt: "Gold coins",
             title: "Liquidity",
             description:
@@ -67,21 +67,21 @@ export const investmentData = {
         title: "Why Invest in Mutual Funds?",
         items: [
           {
-            imgSrc: "/src/assets/mutualFunds1.png",
+            imgSrc: "/assets/mutualFunds1.png",
             imgAlt: "Mutual fund performance",
             title: "Diversification",
             description:
               "Mutual funds spread risk across various assets, reducing the impact of poor performance by any single investment.",
           },
           {
-            imgSrc: "/src/assets/mutualFunds2.png",
+            imgSrc: "/assets/mutualFunds2.png",
             imgAlt: "Growth of investment",
             title: "Potential for Growth",
             description:
               "Many mutual funds offer the potential for higher returns over time by investing in a range of stocks and bonds.",
           },
           {
-            imgSrc: "/src/assets/mutualFunds3.png",
+            imgSrc: "/assets/mutualFunds3.png",
             imgAlt: "Mutual funds accessibility",
             title: "Accessibility",
             description:
@@ -123,21 +123,21 @@ export const investmentData = {
         title: "Why Invest in ETFs?",
         items: [
           {
-            imgSrc: "/src/assets/etf1.png",
+            imgSrc: "/assets/etf1.png",
             imgAlt: "ETF growth chart",
             title: "Low Cost",
             description:
               "ETFs generally have lower fees than mutual funds, making them cost-effective.",
           },
           {
-            imgSrc: "/src/assets/etf2.png",
+            imgSrc: "/assets/etf2.png",
             imgAlt: "ETF trading",
             title: "Ease of Trading",
             description:
               "ETFs can be bought and sold throughout the trading day on the stock exchange.",
           },
           {
-            imgSrc: "/src/assets/mutualFunds1.png",
+            imgSrc: "/assets/mutualFunds1.png",
             imgAlt: "Diversification",
             title: "Diversification",
             description:
@@ -179,21 +179,21 @@ export const investmentData = {
         title: "Why Invest in Stocks?",
         items: [
           {
-            imgSrc: "/src/assets/stocks1.png",
+            imgSrc: "/assets/stocks1.png",
             imgAlt: "Stock market growth",
             title: "Capital Appreciation",
             description:
               "Stocks have the potential for significant growth over time as companies grow in value.",
           },
           {
-            imgSrc: "/src/assets/stocks2.png",
+            imgSrc: "/assets/stocks2.png",
             imgAlt: "Dividend payout",
             title: "Dividends",
             description:
               "Some stocks pay dividends, providing a steady income stream in addition to stock value appreciation.",
           },
           {
-            imgSrc: "/src/assets/stocks3.png",
+            imgSrc: "/assets/stocks3.png",
             imgAlt: "Stock liquidity",
             title: "Liquidity",
             description:
