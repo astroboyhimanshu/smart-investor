@@ -4,7 +4,7 @@ import {
   MdRocketLaunch,
   MdStarOutline,
 } from "react-icons/md";
-import { FeatureType } from "../../types/types";
+import { FeatureType } from "../../types/interfaces";
 
 export const features: FeatureType[] = [
   {
