@@ -1,10 +1,18 @@
-import { GoogleGenerativeAI, GenerativeModel } from "@google/generative-ai";
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+export async function askGemini(prompt: string): Promise<string> {
+  const response = await fetch(`${baseUrl}/gemini/ask`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ prompt }),
+  });
 
-const genAI = new GoogleGenerativeAI(API_KEY);
-const model: GenerativeModel = genAI.getGenerativeModel({
-  model: "models/gemini-2.0-flash-lite",
-});
+  if (!response.ok) {
+    throw new Error("Failed to fetch investment recommendation");
+  }
 
-export { model };
+  const data = await response.json();
+  return data.result;
+}
