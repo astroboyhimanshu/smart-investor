@@ -44,7 +44,7 @@ const InvestmentPlanner = () => {
           {/* Card 1: Gold */}
           <div className="bg-white shadow-lg rounded-2xl p-8 w-full sm:w-1/2 lg:w-1/4 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
             <img
-              src="src/assets/gold.png"
+              src="/assets/gold.png"
               alt="Gold"
               className="w-24 h-24 mx-auto mb-4"
             />
@@ -65,7 +65,7 @@ const InvestmentPlanner = () => {
           {/* Card 2: Mutual Funds */}
           <div className="bg-white shadow-lg rounded-2xl p-8 w-full sm:w-1/2 lg:w-1/4 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
             <img
-              src="src/assets/mutualFunds.png"
+              src="/assets/mutualFunds.png"
               alt="Mutual Funds"
               className="w-24 h-24 mx-auto mb-4"
             />
@@ -86,7 +86,7 @@ const InvestmentPlanner = () => {
           {/* Card 3: ETFs */}
           <div className="bg-white shadow-lg rounded-2xl p-8 w-full sm:w-1/2 lg:w-1/4 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
             <img
-              src="src/assets/etf.png"
+              src="/assets/etf.png"
               alt="ETFs"
               className="w-24 h-24 mx-auto mb-4"
             />
@@ -108,7 +108,7 @@ const InvestmentPlanner = () => {
           {/* Card 4: Stocks */}
           <div className="bg-white shadow-lg rounded-2xl p-8 w-full sm:w-1/2 lg:w-1/4 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
             <img
-              src="src/assets/stocks.png"
+              src="/assets/stocks.png"
               alt="Stocks"
               className="w-24 h-24 mx-auto mb-4"
             />
@@ -130,7 +130,7 @@ const InvestmentPlanner = () => {
           {/* Card 5: Bonds */}
           <div className="bg-white shadow-lg rounded-2xl p-8 w-full sm:w-1/2 lg:w-1/4 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
             <img
-              src="src/assets/bonds.png"
+              src="/assets/bonds.png"
               alt="Bonds"
               className="w-24 h-24 mx-auto mb-4"
             />
@@ -152,7 +152,7 @@ const InvestmentPlanner = () => {
           {/* Card 6: Cryptocurrency */}
           <div className="bg-white shadow-lg rounded-2xl p-8 w-full sm:w-1/2 lg:w-1/4 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
             <img
-              src="src/assets/crypto.png"
+              src="/assets/crypto.png"
               alt="Cryptocurrency"
               className="w-24 h-24 mx-auto mb-4"
             />
