@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { model } from "../../services/geminiService";
 import { InvestmentFormData } from "../../types/interfaces";
 import {
   PieChart,
@@ -14,6 +13,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { askGemini } from "../../services/geminiService";
 
 const InvestmentPlanForm = () => {
   const [formData, setFormData] = useState<InvestmentFormData>({
@@ -60,9 +60,8 @@ const InvestmentPlanForm = () => {
     Do not include any additional text, markdown formatting, code blocks, or explanations.`;
 
     try {
-      const result = await model.generateContent(prompt);
-      const response = result.response;
-      let text = response.text().trim(); // Trim extra spaces or newlines
+      let text = await askGemini(prompt);
+      text = text.trim();
 
       // Strip any potential markdown code blocks, backticks, or other non-JSON content
       text = text.replace(/```json|```/g, "").trim();
