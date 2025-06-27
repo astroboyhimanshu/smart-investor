@@ -235,21 +235,21 @@ export const investmentData = {
         title: "Why Invest in Bonds?",
         items: [
           {
-            imgSrc: "/src/assets/bonds1.png",
+            imgSrc: "/assets/bonds1.png",
             imgAlt: "Bond certificate",
             title: "Steady Income",
             description:
               "Bonds provide regular interest payments, making them ideal for income-focused investors.",
           },
           {
-            imgSrc: "/src/assets/bonds2.png",
+            imgSrc: "/assets/bonds2.png",
             imgAlt: "Bond stability",
             title: "Lower Risk",
             description:
               "Bonds are generally less risky than stocks, especially government bonds.",
           },
           {
-            imgSrc: "/src/assets/bonds3.png",
+            imgSrc: "/assets/bonds3.png",
             imgAlt: "Capital preservation",
             title: "Capital Preservation",
             description:
@@ -291,21 +291,21 @@ export const investmentData = {
         title: "Why Invest in Cryptocurrency?",
         items: [
           {
-            imgSrc: "/src/assets/crypto1.png",
+            imgSrc: "/assets/crypto1.png",
             imgAlt: "Cryptocurrency chart",
             title: "High Return Potential",
             description:
               "Cryptocurrencies can provide high returns over short periods but come with significant risks.",
           },
           {
-            imgSrc: "/src/assets/crypto2.png",
+            imgSrc: "/assets/crypto2.png",
             imgAlt: "Decentralized network",
             title: "Decentralization",
             description:
               "Cryptocurrencies operate on decentralized networks, free from government control.",
           },
           {
-            imgSrc: "/src/assets/crypto3.png",
+            imgSrc: "/assets/crypto3.png",
             imgAlt: "Global accessibility",
             title: "Global Accessibility",
             description:
