@@ -34,19 +34,20 @@ const InvestmentDetails = () => {
           {investment.header.description}
         </div>
 
-        <div className="flex p-4 gap-8">
+        <div className="flex flex-col md:flex-row p-4 gap-4">
           <div className="flex">
             <Button
               onClick={goHome}
               variant="contained"
               sx={{
-                backgroundColor: "#ca8a04",
+                backgroundColor: "#3b82f6",
+                width: 200,
                 color: "white",
                 paddingY: "8px",
                 paddingX: "16px",
                 borderRadius: "8px",
                 "&:hover": {
-                  backgroundColor: "#a16207",
+                  backgroundColor: "#1d4ed8",
                 },
                 fontSize: "0.875rem",
                 fontWeight: 500,
@@ -62,6 +63,7 @@ const InvestmentDetails = () => {
               sx={{
                 backgroundColor: "#16a34a",
                 color: "white",
+                width: 200,
                 paddingY: 1, // px-2
                 paddingX: 2, // px-4
                 borderRadius: "8px",
@@ -82,7 +84,7 @@ const InvestmentDetails = () => {
       {investment.sections.map((section, index) => (
         <div
           key={index}
-          className="bg-white w-[80%] m-auto shadow-lg rounded-2xl p-6 mb-12 hover:shadow-xl"
+          className="bg-white w-full md:w-[80%] m-auto shadow-lg rounded-2xl p-6 mb-12 hover:shadow-xl"
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
             {section.title}
@@ -114,7 +116,7 @@ const InvestmentDetails = () => {
       ))}
 
       {/* Benefits Section */}
-      <div className="bg-white hover:shadow-xl rounded-2xl p-8 text-center mb-12 w-[80%] m-auto">
+      <div className="bg-white hover:shadow-xl rounded-2xl p-8 text-center mb-12 w-full md:w-[80%] m-auto">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
           {investment.benefits.title}
         </h2>
@@ -135,7 +137,7 @@ const InvestmentDetails = () => {
       </div>
 
       {/* Final Thoughts Section */}
-      <div className="bg-gray-50 hover:shadow-xl rounded-2xl p-8 text-center w-[80%] m-auto">
+      <div className="bg-gray-50 hover:shadow-xl rounded-2xl p-8 text-center w-full md:w-[80%] m-auto">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
           {investment.finalThoughts.title}
         </h2>

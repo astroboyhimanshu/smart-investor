@@ -47,7 +47,7 @@ const PlanGenerator = () => {
 
           <div className="p-8">
             <div className="flex items-center mb-8">
-              <div className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center">
+              <div className="w-6 h-6 md:w-12 md:h-12 bg-indigo-600 rounded-full flex items-center justify-center">
                 <MdArrowForward className="h-6 w-6 text-white" />
               </div>
               <div className="ml-4">
