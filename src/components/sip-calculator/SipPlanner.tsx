@@ -64,7 +64,7 @@ const SipPlanner = () => {
           </Button>
         </div>
 
-        <div className="w-1/2 lg:w-4xl flex flex-col md:flex-row lg:flex-row gap-4 bg-gray-100 rounded-xl shadow-md p-4">
+        <div className="w-full md:w-[80%] lg:w-4xl flex flex-col md:flex-row lg:flex-row gap-4 bg-gray-100 rounded-xl shadow-md p-4">
           {/* Left Side: Inputs and Results */}
           <div className="w-full lg:w-1/2 p-4">
             <div className="flex justify-between items-center mb-4">

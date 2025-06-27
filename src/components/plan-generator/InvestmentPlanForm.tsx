@@ -367,18 +367,19 @@ const InvestmentPlanForm = () => {
           </div>
 
           {/* Allocation Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+          <div className="-mx-2 mb-6 flex flex-wrap">
             {Object.entries(investmentResult).map(
               ([asset, percentage]: any, index) => (
-                <div
-                  key={asset}
-                  className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-indigo-100"
-                  style={{ borderLeftColor: COLORS[index % COLORS.length] }}
-                >
-                  <h4 className="font-medium text-indigo-700">{asset}</h4>
-                  <p className="text-2xl font-bold text-gray-800">
-                    {percentage}%
-                  </p>
+                <div key={asset} className="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
+                  <div
+                    className="bg-white p-4 rounded-lg shadow-sm border-l-4"
+                    style={{ borderLeftColor: COLORS[index % COLORS.length] }}
+                  >
+                    <h4 className="font-medium text-indigo-700">{asset}</h4>
+                    <p className="text-2xl font-bold text-gray-800">
+                      {percentage}%
+                    </p>
+                  </div>
                 </div>
               )
             )}
